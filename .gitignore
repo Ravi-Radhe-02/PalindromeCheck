@@ -1,23 +1,23 @@
-# Compiled class file
-*.class
 
-# Log file
-*.log
+import java.util.Scanner;
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+public class Palindrome {
+   public static void PalindromeCheck(String name){
+        name = name.toUpperCase();
+        StringBuilder reverseName = new StringBuilder();
+        for (int i=name.length()-1;i>=0;i--){
+            reverseName.append(name.charAt(i));
+        }
+       if (name.equals(reverseName.toString())){
+           System.out.println(name+" is a Palindrome ");
+       }else {
+           System.out.println(name+" is not a palindrome ");
+       }
+   }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a String ");
+        String string = scanner.next();
+       PalindromeCheck(string);
+    }
+}
